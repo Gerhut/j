@@ -6,28 +6,38 @@
   <title>j test</title>
 </head>
 <body>
-  <p>hello</p>
-  <p>world</p>
-  <span>foo</span>
+  <p>p: hello</p>
+  <p>p: world</p>
+  <span>span: foo</span>
   <pre>
-  j('p', {
+  j
+  ('p') // Get all `p`
+  ({
     sBackground: 'black',
     sColor: 'white'
-  }, 'span')({
-    sColor: 'green'
-  }, '+p', {html: null})
+  })    // Set css
+  ('span') // Get all 'span'
+  ({sColor: 'green'}) // set css
+  ('+p')  // get all `p` in addition
+  ({html: null}) // get their html
 
   Output:
-  ["foo", "hello", "world"]
+  ["span: foo", "p: hello", "p: world"]
   </pre>
   <script src="j.js"></script>
   <script>
-  console.log(j('p', {
-    sBackground: 'black',
-    sColor: 'white'
-  }, 'span')({
-    sColor: 'green'
-  }, '+p', {html: null}))
+  console.log(
+    j
+    ('p')
+    ({
+      sBackground: 'black',
+      sColor: 'white'
+    })
+    ('span')
+    ({sColor: 'green'})
+    ('+p')
+    ({html: null})
+  )
   </script>
 </body>
 </html>
