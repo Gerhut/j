@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>j test</title>
+</head>
+<body>
+  <p>hello</p>
+  <p>world</p>
+  <span>foo</span>
+  <pre>
+  j('p', {
+    sBackground: 'black',
+    sColor: 'white'
+  }, 'span')({
+    sColor: 'green'
+  }, '+p', {html: null})
+
+  Output:
+  ["foo", "hello", "world"]
+  </pre>
+  <script src="j.js"></script>
+  <script>
+  console.log(j('p', {
+    sBackground: 'black',
+    sColor: 'white'
+  }, 'span')({
+    sColor: 'green'
+  }, '+p', {html: null}))
+  </script>
+</body>
+</html>
